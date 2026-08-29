@@ -113,14 +113,16 @@
     .hero .foto{width:140px;height:140px;flex-basis:auto}
   }
 
-  /* franja clientes */
-  .clientes{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px}
-  .clientes span{font-size:16px;font-weight:600;white-space:nowrap}
-  .clientes span em{font-style:normal;font-weight:400;color:var(--muted)}
-  .collage-hueco{
-    margin-top:32px;border:1px dashed var(--rule);border-radius:10px;
-    padding:34px 24px;text-align:center;color:var(--muted);font-size:15px;
-  }
+  /* clientes: grid generado */
+  .cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+  @media (max-width:900px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:620px){.cgrid{grid-template-columns:repeat(2,1fr)}}
+  .ccard{border:1px solid var(--rule);border-radius:10px;padding:22px 18px 18px;background:#fff;display:flex;flex-direction:column}
+  .ccard .cn{font-family:var(--display);font-weight:800;font-size:19px;line-height:1.12;letter-spacing:-.02em}
+  .ccard .cr{font-size:13.5px;color:var(--muted);margin-top:6px;line-height:1.45;flex:1}
+  .ccard .cf{align-self:flex-start;margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.03em;background:var(--mark);padding:3px 9px;border-radius:4px}
+  .ctotal{font-size:17px;margin-top:32px}
+  .cmas{font-size:14.5px;color:var(--muted);margin-top:10px}
 
   /* grid de videos */
   .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
@@ -165,10 +167,7 @@
     display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
     color:var(--muted);border:1px solid var(--rule);border-radius:4px;padding:2px 7px;margin-top:10px;
   }
-  .cita.imgcard{padding:0;overflow:hidden}
-  .cita.imgcard img{width:100%;height:auto;display:block}
-  .cita.imgcard .pie{padding:12px 16px;border-top:1px solid var(--rule)}
-  .cita.imgcard .pie .who{margin:0}
+  .cita .src svg{vertical-align:-2px;margin-right:5px}
 
   /* numeros */
   .nums{display:flex;gap:28px;flex-wrap:nowrap;justify-content:center;text-align:center;margin-top:36px}
@@ -218,24 +217,24 @@
 <section>
   <div class="wrap-wide">
     <p class="kicker">He trabajado con</p>
-    <div class="clientes">
-      <span>José Muñoz <em>· Programa IN</em></span>
-      <span>Escuela de Lujo</span>
-      <span>Zeke Novarino</span>
-      <span>Hackaviss</span>
-      <span>Tutellus</span>
-      <span>Digital Riders</span>
-      <span>Agencia Riders</span>
-      <span>Racks Academy</span>
-      <span>Mentwin</span>
-      <span>Talent Network</span>
-      <span>Crece Sin Límite</span>
-      <span>Pau Antó <em>· Inversor Pro</em></span>
-      <span>Tuto Marolla <em>· Biohacking</em></span>
-      <span>Ana Moreno</span>
-      <span>Vanessa Marrero</span>
+
+    <div class="cgrid">
+      <div class="ccard"><div class="cn">José Muñoz</div><div class="cr">Inversión inmobiliaria · Programa IN</div><span class="cf">100 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Ana Moreno Marín</div><div class="cr">Comunicación y oratoria</div><span class="cf">330 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Pau Antó</div><div class="cr">Inversión inmobiliaria · Inversor Pro</div><span class="cf">184 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Hackaviss</div><div class="cr">Ciberseguridad y forense digital</div><span class="cf">142 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Juan de Dios Orozco</div><div class="cr">Escuela de Lujo · protocolo</div><span class="cf">104 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Zeke Novarino</div><div class="cr">Marca personal y contenido</div><span class="cf">74 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Talent Network</div><div class="cr">Ciencia, tecnología e ingeniería</div><span class="cf">61 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Tuto Marolla</div><div class="cr">Biohacking y alta performance</div><span class="cf">57 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Crece Sin Límite</div><div class="cr">Publicidad y marketing · +100M€ generados</div><span class="cf">28 mil seguidores</span></div>
+      <div class="ccard"><div class="cn">Tutellus</div><div class="cr">Crypto, tokenización y Web3</div></div>
+      <div class="ccard"><div class="cn">Digital Riders</div><div class="cr">Agencia de lanzamientos y embudos</div></div>
+      <div class="ccard"><div class="cn">Racks Academy</div><div class="cr">IA y desarrollo web3</div></div>
     </div>
-    <img src="assets/clientes-collage.png" alt="Collage de clientes con los que ha trabajado Daniel: José Muñoz, Ana Moreno, Hackaviss, Escuela de Lujo, Pau Antó, Zeke Novarino, Talent Network, Tuto Marolla, Crece Sin Límite, Tutellus, Digital Riders y Racks Academy" loading="lazy" style="width:100%;height:auto;border-radius:10px;margin-top:32px">
+
+    <p class="ctotal">Solo en Instagram, estas cuentas suman <span class="mark">más de un millón de seguidores</span>.</p>
+    <p class="cmas">Y también: Agencia Riders, Proelia Digital, Mentwin, Vanessa Marrero, Marcel García, Víctor Guaita...</p>
   </div>
 </section>
 
@@ -290,63 +289,38 @@
 <!-- ============ 4 · MURO DE CITAS ============ -->
 <section>
   <div class="wrap-wide">
-    <p class="kicker">Por escrito</p>
+    <p class="kicker">Recomendaciones en LinkedIn</p>
     <h2>Lo que dicen cuando acaba el trabajo</h2>
 
     <div class="muro">
-      <div class="cita imgcard">
-        <img src="assets/josemunoz.jpg" alt="Mensaje de WhatsApp de José Muñoz: Totalmente. Acabo de leerlo y es top Dani. Adelante" loading="lazy">
-        <div class="pie"><p class="who"><strong>José Muñoz</strong> · Programa IN · WhatsApp</p></div>
-      </div>
-
       <div class="cita">
         <p class="q">"Logré llenar las plazas de mi primer lanzamiento online en menos de un mes, con una facturación de más de 20.000€."</p>
         <p class="who"><strong>[[NOMBRE PENDIENTE]]</strong> · Mentes Innovadoras</p>
-        <span class="src">Recomendación en LinkedIn</span>
-      </div>
-
-      <div class="cita imgcard">
-        <img src="assets/social-proof2.png" alt="Mensaje de WhatsApp de Víctor Guaita: Joder Dani no sé cómo saldrá el lanzamiento, pero eres un genio escribiendo" loading="lazy">
-        <div class="pie"><p class="who"><strong>Víctor Guaita</strong> · Surf · WhatsApp</p></div>
+        <span class="src"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>Recomendación en LinkedIn</span>
       </div>
 
       <div class="cita">
         <p class="q">"Hicimos un match increíblemente potente para levantar un proyecto literalmente de cero y ponerlo en órbita en 2 años llegando a los +2M de facturación."</p>
         <p class="who"><strong>David Carbonel</strong> · Lanzamientos y funnels para infoproductores</p>
-        <span class="src">Recomendación en LinkedIn</span>
-      </div>
-
-      <div class="cita imgcard">
-        <img src="assets/yan.jpg" alt="Mensaje de Slack de Yan Vispo: Mola mucho Dani G. El email 5 es de lo mejor que he leído en mucho tiempo" loading="lazy">
-        <div class="pie"><p class="who"><strong>Yan Vispo</strong> · Proelia Digital · Slack</p></div>
+        <span class="src"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>Recomendación en LinkedIn</span>
       </div>
 
       <div class="cita">
         <p class="q">"Trabajar con Dani en nuestros lanzamientos ha sido un lujo. No solo escribe copy que vende, sino que entiende la estrategia detrás de cada palabra, asegurando que el embudo convierta."</p>
         <p class="who"><strong>Víctor Alcázar</strong> · Agencia Riders</p>
-        <span class="src">Recomendación en LinkedIn</span>
-      </div>
-
-      <div class="cita imgcard">
-        <img src="assets/hackavis.png" alt="Mensaje de WhatsApp de Hackavis: Me molan la verdad los emails, están guapos" loading="lazy">
-        <div class="pie"><p class="who"><strong>Jose Javier Pastor</strong> · Hackaviss · WhatsApp</p></div>
+        <span class="src"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>Recomendación en LinkedIn</span>
       </div>
 
       <div class="cita">
         <p class="q">"Tiene un don especial para conectar con sus clientes, hablar como si fueran ellos pero adecuando el mensaje para que funcione infinitamente mejor de cara a conseguir su objetivo."</p>
         <p class="who"><strong>Manuel Miñano</strong> · Proelia Digital</p>
-        <span class="src">Recomendación en LinkedIn</span>
+        <span class="src"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>Recomendación en LinkedIn</span>
       </div>
 
       <div class="cita">
         <p class="q">"Los textos parecen que hayan sido escritos por el propio cliente, sabe detectar el tono de comunicación de cada marca y adaptarse a su estilo. Siempre manteniendo la persuasión y conversión en mente."</p>
         <p class="who"><strong>David Monleón</strong> · Estratega de publicidad</p>
-        <span class="src">Recomendación en LinkedIn</span>
-      </div>
-
-      <div class="cita">
-        <p class="q"><span class="ph">[[MÁS CAPTURAS DEL MIRO · LAS ELEGIMOS JUNTOS]]</span></p>
-        <p class="who"><strong>Ana Moreno · Vanessa Marrero · Tuto Marolla...</strong></p>
+        <span class="src"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>Recomendación en LinkedIn</span>
       </div>
     </div>
   </div>
@@ -357,19 +331,19 @@
 <!-- ============ 5 · NUMEROS ============ -->
 <section>
   <div class="wrap-wide">
-    <p class="kicker">En cifras <span class="ph">[[CIFRAS EN BRUTO · DANIEL LAS VALIDA Y AFINA]]</span></p>
+    <p class="kicker">En cifras <span class="ph">[[VALIDAR: EL +6M SALE DE SUMAR TUS PROYECTOS]]</span></p>
     <div class="nums">
       <div class="n">
+        <div class="cifra">+6M€</div>
+        <div class="de">facturados para clientes con mi copy</div>
+      </div>
+      <div class="n">
         <div class="cifra">2</div>
-        <div class="de">lanzamientos de siete cifras escritos de principio a fin</div>
+        <div class="de">lanzamientos de siete cifras, con ~1,2M€ facturados en cada uno</div>
       </div>
       <div class="n">
-        <div class="cifra">~1,2M€</div>
-        <div class="de">facturados en cada uno de esos dos lanzamientos</div>
-      </div>
-      <div class="n">
-        <div class="cifra">6 cifras</div>
-        <div class="de">la liga del resto de lanzamientos que he escrito estos años</div>
+        <div class="cifra">Decenas</div>
+        <div class="de">de lanzamientos escritos en total, unos cuantos de ellos de seis cifras</div>
       </div>
     </div>
     <p class="nums-nota">Cada cifra sale de proyectos reales en los que escribí el copy. Ninguna es una promesa.</p>
